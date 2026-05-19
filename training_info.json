@@ -1,0 +1,37 @@
+{
+  "model_name": "LSTM_WaterLevel_Predictor",
+  "created_at": "2026-05-19T14:03:27.952987",
+  "device": "cpu",
+  "metrics": {
+    "MSE": 0.008438742918355278,
+    "RMSE": 0.09186263069581274,
+    "MAE": 0.050014158055429365,
+    "MAPE": 11.961935749271284
+  },
+  "model_config": {
+    "input_size": 1,
+    "hidden_size": 64,
+    "num_layers": 2,
+    "output_size": 1,
+    "dropout": 0.2,
+    "seq_length": 24,
+    "scaler_type": "minmax"
+  },
+  "training_params": {
+    "epochs": 50,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "patience": 10
+  },
+  "data_info": {
+    "total_samples": 2000,
+    "train_samples": 1384,
+    "val_samples": 197,
+    "test_samples": 395,
+    "features": [
+      "water_level",
+      "temperature",
+      "rainfall"
+    ]
+  }
+}

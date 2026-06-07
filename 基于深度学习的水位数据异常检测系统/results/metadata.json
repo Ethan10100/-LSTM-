@@ -1,0 +1,106 @@
+{
+  "dataset_name": "water_level.csv",
+  "file_path": "C:\\Users\\Lenovo\\Desktop\\基于深度学习的水位数据异常检测系统\\data\\water_level.csv",
+  "description": "水位监测时间序列数据",
+  "data_source": "模拟数据 / 课程实训",
+  "created_date": "2026-06-05",
+  "coordinate_system": "WGS84 (EPSG:4326)",
+  "record_count": 200,
+  "column_count": 3,
+  "columns": [
+    {
+      "name": "timestamp",
+      "dtype": "object",
+      "null_count": 0,
+      "sample_values": [
+        "2024-01-01 00:00:00",
+        "2024-01-01 01:00:00",
+        "2024-01-01 02:00:00",
+        "2024-01-01 03:00:00",
+        "2024-01-01 04:00:00"
+      ]
+    },
+    {
+      "name": "water_level",
+      "dtype": "float64",
+      "null_count": 0,
+      "sample_values": [
+        14.865014245903378,
+        15.351481277826014,
+        16.220090636299354,
+        17.030247490771433,
+        16.930051309985043
+      ]
+    },
+    {
+      "name": "is_anomaly",
+      "dtype": "int64",
+      "null_count": 0,
+      "sample_values": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "time_range": {
+    "start": "2024-01-01 00:00:00",
+    "end": "2024-01-09 07:00:00"
+  },
+  "spatial_extent": null,
+  "quality_report": {
+    "check_time": "2026-06-05T20:29:45.502957",
+    "total_rows": 200,
+    "total_columns": 3,
+    "columns": [
+      "timestamp",
+      "water_level",
+      "is_anomaly"
+    ],
+    "checks": {
+      "completeness": {
+        "status": "ok",
+        "missing_columns": [],
+        "null_counts": {}
+      },
+      "value_range": {
+        "column": "water_level",
+        "min_allowed": 5.0,
+        "max_allowed": 30.0,
+        "actual_min": 8.47777565290604,
+        "actual_max": 24.39472208280455,
+        "out_of_range_count": 0,
+        "outlier_indices": [],
+        "is_ok": true
+      },
+      "temporal_continuity": {
+        "status": "ok",
+        "total_points": 200,
+        "time_start": "2024-01-01 00:00:00",
+        "time_end": "2024-01-09 07:00:00",
+        "expected_frequency": "1h",
+        "gap_count": 0,
+        "max_gap": "N/A",
+        "gap_percentage": "0.00%"
+      },
+      "duplicates": {
+        "status": "ok",
+        "duplicate_count": 0,
+        "duplicate_indices": []
+      },
+      "statistics": {
+        "count": 200,
+        "mean": 14.905415270211625,
+        "std": 2.350912550169446,
+        "min": 8.47777565290604,
+        "q25": 13.058621912074651,
+        "median": 14.916401810925677,
+        "q75": 16.63053167696828,
+        "max": 24.39472208280455
+      }
+    },
+    "overall_status": "pass"
+  }
+}

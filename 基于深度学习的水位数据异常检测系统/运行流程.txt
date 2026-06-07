@@ -1,0 +1,39 @@
+运行流程：
+
+方式一：Web交互界面（推荐）
+bash
+streamlit run web_app.py
+
+方式二：命令行一键运行
+bash
+python run.py
+
+方式三：分步运行
+
+1. 生成示例数据
+bash
+python src/data_utils.py
+
+2. 训练模型（自动划分验证集、早停、保存Scaler）
+bash
+python src/train.py --data-path data/water_level.csv --model-path models/lstm_autoencoder.pth --scaler-path models/scaler.pkl
+
+3. 执行异常检测与评估
+bash
+python src/detect.py --data-path data/water_level.csv --model-path models/lstm_autoencoder.pth --scaler-path models/scaler.pkl
+
+命令行参数：
+
+训练参数:
+  --epochs N          训练轮数 (默认: 50)
+  --batch-size N      批次大小 (默认: 64)
+  --seq-len N         序列长度 (默认: 30)
+  --lr LR             学习率 (默认: 0.001)
+  --val-split F       验证集比例 (默认: 0.2)
+  --patience N        早停耐心值 (默认: 10)
+  --loss-plot PATH    损失曲线保存路径 (默认: results/training_loss.png)
+
+检测参数:
+  --threshold-factor F  异常阈值因子 (默认: 1.5, 越大异常越少)
+  --output-csv PATH     结果CSV保存路径 (默认: results/anomaly_results.csv)
+  --output-plot PATH    可视化图保存路径 (默认: results/anomaly_plot.png)
